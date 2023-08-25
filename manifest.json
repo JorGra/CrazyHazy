@@ -1,0 +1,22 @@
+{
+    "name": "Hazy",
+    "description": "A Hazy spicetify theme",
+    "preview": "hazy_home.png",
+    "readme": "README.md",
+    "usercss": "user.css",
+    "schemes": "color.ini",
+    "include": [
+        "https://raw.githubusercontent.com/Astromations/Hazy/main/theme.js"
+    ],
+    "authors": [
+        {
+            "name": "Astromations",
+            "url": "https://github.com/Astromations"
+        }
+    ],
+    "tags": [
+        "dark",
+        "transparent",
+        "hazy"
+    ]
+}
