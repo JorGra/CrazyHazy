@@ -15,6 +15,7 @@
     const contValue = parseInt(localStorage.getItem("contAmount"));
     const satuValue = parseInt(localStorage.getItem("satuAmount"));
     const brightValue = parseInt(localStorage.getItem("brightAmount"));
+    const listAnimationStrenght = parseInt(localStorage.getItem("AnimationStrenghtListItems"));
 
     if (!isNaN(blurValue)) {
       document.documentElement.style.setProperty("--blur", `${blurValue}px`);
@@ -39,6 +40,13 @@
     } else {
       document.documentElement.style.setProperty("--bright", `120%`);
     }
+
+    if (!isNaN(satuValue)) {
+      document.documentElement.style.setProperty("--animation-strength-list-items", `${AnimationStrenghtListItems}%`);
+    } else {
+      document.documentElement.style.setProperty("--animation-strength-list-items", `100%`);
+    }
+
   }
   valueSet()
 
@@ -601,7 +609,7 @@
       optionList.append(optionRow);
     };
 
-    function setValue(blur_am, cont, satu, bright, desc) {
+    function setValue(blur_am, cont, satu, bright, animStrength, desc) {
       let valueRow = document.createElement("div");
       let blur_val = localStorage.getItem(blur_am);
       let cont_val = localStorage.getItem(cont);
@@ -618,6 +626,10 @@
 
     if (localStorage.getItem(satu) === null) {
       satu_val = "70";
+    }
+
+    if (localStorage.getItem(animStrength) === null) {
+      animStrength_val = "70";
     }
 
     if (localStorage.getItem(bright) === null) {
@@ -664,6 +676,15 @@
         </div>
       </div>
 
+      <div class="slider-container">
+      <label for="animStrength-input">Animation strength for list items:</label>
+      <input class="slider" id="animStrength-input" type="range" min="0" max="200" step="2" value="${animStrength_val}">
+      <div class="slider-value">
+        <div id="animStrength-value" contenteditable="true">${animStrength_val}</div>
+        <div id="unit" class="animStrength-editable">%</div>
+      </div>
+    </div>
+
     </div>`;
 
     valueRow.querySelector("#blur-value").addEventListener("input", function() {
@@ -702,6 +723,15 @@
         valueRow.querySelector("#bright-input").value = number;
       });
 
+    valueRow.querySelector("#animStrength-value").addEventListener("input", function() {
+      let content = valueRow.querySelector("#animStrength-value").textContent.trim();
+      let number = parseInt(content);
+      if (content.length > 3) {
+        content = valueRow.querySelector("#animStrength-value").textContent = content.slice(0, 3); // Truncate the content to 3 characters
+      }
+        valueRow.querySelector("#animStrength-input").value = number/100.0;
+      });
+
     valueRow.querySelector("#blur-input").addEventListener("input", function() {
     valueRow.querySelector("#blur-value").textContent = valueRow.querySelector("#blur-input").value;
     });
@@ -718,6 +748,10 @@
     valueRow.querySelector("#bright-value").textContent = valueRow.querySelector("#bright-input").value;
     });
 
+    valueRow.querySelector("#animStrength-input").addEventListener("input", function() {
+      valueRow.querySelector("#animStrength-value").textContent = valueRow.querySelector("#animStrength-input").value;
+      });
+
     valueSet();
 
     valueList.appendChild(valueRow);
@@ -725,6 +759,7 @@
     valueRow.setAttribute("cont", cont);
     valueRow.setAttribute("satu", satu);
     valueRow.setAttribute("bright", bright);
+    valueRow.setAttribute("animStrength", animStrength);
     };
 
     const srcInput = document.createElement("input");
@@ -738,7 +773,7 @@
     content.append(srcInput);
 
     createOption("UseCustomBackground", "Custom background:", false);
-    setValue("blurAmount", "contAmount", "satuAmount", "brightAmount", " ")
+    setValue("blurAmount", "contAmount", "satuAmount", "brightAmount", "animStrength"," ")
 
     content.append(optionList);
     content.append(valueList);
@@ -780,11 +815,13 @@
         let contValueInput = value.querySelector('#cont-input');
         let satuValueInput = value.querySelector('#satu-input');
         let brightValueInput = value.querySelector('#bright-input');
+        let animStrengthValueInput = value.querySelector('#animStrength-input');
       
         localStorage.setItem(value.getAttribute("blur_am"), blurValueInput.value);
         localStorage.setItem(value.getAttribute("cont"), contValueInput.value);
         localStorage.setItem(value.getAttribute("satu"), satuValueInput.value);
         localStorage.setItem(value.getAttribute("bright"), brightValueInput.value);
+        localStorage.setItem(value.getAttribute("animStrength"), animStrengthValueInput.value);
 
         valueSet()
       });  
@@ -800,17 +837,20 @@
         document.querySelector(".hazyOptionRow #cont-input").value = 50;
         document.querySelector(".hazyOptionRow #satu-input").value = 70;
         document.querySelector(".hazyOptionRow #bright-input").value = 120;
-
+        document.querySelector(".hazyOptionRow #animStrength-input").value = 100;
+        
         document.querySelector(".hazyOptionRow #blur-value").textContent = "15px";
         document.querySelector(".hazyOptionRow #cont-value").textContent = "50%";
         document.querySelector(".hazyOptionRow #satu-value").textContent = "70%";
         document.querySelector(".hazyOptionRow #bright-value").textContent = "120%";
-
+        document.querySelector(".hazyOptionRow #animStrength-value").textContent = "100%";
+        
 
         localStorage.setItem(value.getAttribute("blur_am"), 8);
         localStorage.setItem(value.getAttribute("cont"), 50);
         localStorage.setItem(value.getAttribute("satu"), 70);
         localStorage.setItem(value.getAttribute("bright"), 120);
+        localStorage.setItem(value.getAttribute("animStrength"), 100);
         valueSet()
       });  
 

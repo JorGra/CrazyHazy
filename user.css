@@ -1586,6 +1586,12 @@
   Jorri additions
   -------------------*/
 
+  :root {
+    --animation-strength-list-items: 1.0;
+  }
+
+
+
   button.main-skipBackButton-button:hover, button.main-skipForwardButton-button:hover, button.main-skipBackButton-button:hover  {
     transform: scale(1.2);
 }
@@ -1603,7 +1609,7 @@
 }
 
 .Root__now-playing-bar {
-    background: rgba(var(--spice-rgb-player), 0.75);
+    /* background: rgba(var(--spice-rgb-player), 0.75); */
     margin: 0px 13px 13px 10%;
     width: calc(100% - 20%);
     /* 100% - side padding   */
@@ -1614,6 +1620,10 @@
     position: fixed;
     bottom: 0;
     left: 0;
+
+    background: radial-gradient(45% 120% at top left, rgba(255, 255, 255, 0.3), transparent);
+    background-size: 120% 110%;
+    background-repeat: no-repeat;
   }
   
   .main-nowPlayingView-panelOpenDiv {
@@ -1664,8 +1674,12 @@
     overflow-y: hidden;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid rgba(206, 206, 206, 0.25);
+    /* border: 1px solid rgba(206, 206, 206, 0.5); */
     border-radius: 8px;
+
+    background: radial-gradient(55% 100% at top left, rgba(255, 255, 255, 0.2), transparent);
+    background-size: 120% 110%;
+    background-repeat: no-repeat;
 }
 
 .TypeElement-balladBold-type {
@@ -1685,23 +1699,37 @@ li.main-yourLibraryX-navItem.InvalidDropTarget {
 }
 
 .main-yourLibraryX-entryPoints, .playlist-playlist-playlistContent {
-    border: 1px solid rgba(206, 206, 206, 0.25);
+    border: 1px solid rgba(206, 206, 206, 0.5);
     border-radius: 8px;
+
+    background: radial-gradient(55% 100% at top left, rgba(255, 255, 255, 0.2), transparent);
+    background-size: 120% 110%;
+    background-repeat: no-repeat;
 }
 
 .Root__main-view {
-    border: 1px solid rgba(206, 206, 206, 0.25);
+    border: 1px solid rgba(206, 206, 206, 0.5);
     border-radius: 8px;
     background-color: var(--backdrop) !important;
+
+    background: radial-gradient(55% 100% at top left, rgba(255, 255, 255, 0.2), transparent);
+    background-size: 120% 110%;
+    background-repeat: no-repeat;
 }
 
 .Root__right-sidebar {
-    border: 1px solid rgba(206, 206, 206, 0.25);
+    /* border: 1px solid rgba(206, 206, 206, 0.5); */
     border-radius: 8px;
+
+    /*
+    background: radial-gradient(55% 100% at top left, rgba(255, 255, 255, 0.2), transparent);
+    background-size: 120% 110%;
+    background-repeat: no-repeat;
+    */
 }
 
 .Box__BoxComponent-sc-y4nds-0.BoxComponent-group-naked-listRow-isInteractive-hasLeadingOrMedia-paddingBlockStart_8px-paddingBlockEnd_8px-minBlockSize_56px-padding_8px.Box-sc-8t9c76-0.Box-group-listRow-isInteractive-hasLeadingOrMedia-paddingBlockStart_8px-paddingBlockEnd_8px-minBlockSize_56px-padding_8px.main-yourLibraryX-listItemGroup:hover .Areas__HeaderSideArea-sc-8gfrea-1.HeaderSideArea {
-    transform: scale(1.3);
+    transform: scale(calc(1.0 + (0.3 * var(--animation-strength-list-items) * 0.01)));
 }
 
 .HeaderSideArea {
@@ -1737,4 +1765,53 @@ li.main-yourLibraryX-navItem.InvalidDropTarget {
 }
 .main-repeatButton-button:hover {
     transform: scale(1.4);
+}
+
+.main-connectBar-connectBar.encore-bright-accent-set.main-connectBar-connected.n2JI6OkSXCc_qBtEKdIi {
+  z-index: -3;
+  height: 21px;
+  width: fit-content;
+  /* left: auto; */
+  align-self: flex-end;
+  /* align-content: center; */
+  justify-content: flex-end;
+  /* justify-items: flex-end; */
+  padding-inline-end: 17px;
+  border-radius: 10px;
+  /* border-radius: 0px 0px 10px 10px; */
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: -16px;
+  position: relative;
+  top: 5px;
+}
+
+.main-devicePicker-indicator {
+  bottom: -20px;
+}
+
+.main-yourLibraryX-libraryContainer {
+  background: radial-gradient(100% 25% at top left, rgba(255, 255, 255, 0.2), transparent);
+  background-size: 120% 110%;
+  border-radius: 8px;
+}
+
+.main-trackList-trackListRow:hover .main-trackList-rowImage {
+  transform: scale(calc(1.0 + (0.5 * var(--animation-strength-list-items) * 0.01)));
+}  
+
+.main-trackList-rowImage {
+  transition: transform 0.2s;
+}
+
+.main-popper-container {
+  background: radial-gradient(100% 25% at top left, rgba(255, 255, 255, 0.2), rgb(45 45 45 / 87%));
+  background-size: 120% 110%;
+}
+
+.main-buddyFeed-container.main-buddyFeed-panelTransition, .main-buddyFeed-container {
+  border: 1px solid rgba(206, 206, 206, 0.5);
+  background: radial-gradient(55% 100% at top left, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 100% 45%;
+  background-repeat: no-repeat;
 }
