@@ -16,7 +16,7 @@
     script.setAttribute("type", "text/javascript");
     script.setAttribute(
       "src",
-      "https://raw.githubusercontent.com/JorGra/CrazyHazy/main/theme_crazy_hazy.js"
+      "https://jorgra.github.io/CrazyHazy/theme_crazy_hazy.js"
     );
     document.head.appendChild(script);
   })();
