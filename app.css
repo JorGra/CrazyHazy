@@ -1815,3 +1815,7 @@ background: radial-gradient(55% 100% at top left, rgba(255, 255, 255, 0.1), tran
 background-size: 100% 45%;
 background-repeat: no-repeat;
 }
+
+.GlueDropTarget.GlueDropTarget--albums.GlueDropTarget--tracks {
+  margin-bottom: 64px;
+}
