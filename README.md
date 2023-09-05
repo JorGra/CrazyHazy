@@ -1,60 +1,42 @@
-# Hazy 
+# CrazyHazy 
 
-A translucent theme based on <a href="https://github.com/JulienMaille/spicetify-dynamic-theme">DynamicDefault</a> and <a href="https://github.com/nimsandu/spicetify-bloom">Bloom</a>. If you're liking Hazy, please don't forget to ⭐ the project.
+CrazyHazy is an animation heavy translucent theme for Spotify. It is based on the <a href="https://github.com/Astromations/Hazy">Hazy Theme</a> from Astromations.
+Hazy is based on <a href="https://github.com/JulienMaille/spicetify-dynamic-theme">DynamicDefault</a> and <a href="https://github.com/nimsandu/spicetify-bloom">Bloom</a>. 
+If you're liking CrazyHazy, Hazy or any of the other themes, please don't forget to ⭐ the project.
 
 
 ## Preview
-**Custom Backgrounds**
 
-![demo-base](./hazy_home.png)
-![demo-base](./hazy_lyrics.png)
-![demo-base](./hazy_play.png)
+![demo-base](./Images/CrazyHazy_home.png)
+![demo-base](./Images/CrazyHazy_playlist.png)
+![demo-base](./Images/CrazyHazy_blue.png)
+![demo-base](./Images/CrazyHazy.mp4)
 
-**Set Background To Album Art**  
+**Set Background To Album Art and Variables**  
 
-![demo-base](./custom_bg.png)
+You can adjust some parameters like background blur, contrast and the animation strenght in the Hazy settings menu.
+The images use the following settings:
+
+Blur: 25px;
+Contrast: 66%;
+Saturation: 70%;
+Brightness: 120%;
+Animation strength: 100;
   
-### ⏹️ How To Get Sidebar ⏹️
----
-1. Click on your Profile > Experimental Features
-2. Search"sidebar" 
-3. Copy the following settings:
-  <div>
-    <img width="500px" src="https://github.com/Astromations/Hazy/assets/80211195/72ce19d5-fff5-477b-949e-dcc7c5a6f65c"> <img>
-  </div>
-  
- <span>**Click the new "Now Playing View" button to activate the sidebar**</span>
-  
-<span>
-  <img src="https://github.com/Astromations/Hazy/assets/80211195/ee64d41c-33f2-41ed-9c70-03a639383570"><img>
- </span>
 
-    
 ### ⬇️ Automatic Installation ⬇️
 
----
+Use the Spicetify Marketplace!
 
-Windows -> **PowerShell**:
-
-```powershell
-iwr -useb https://raw.githubusercontent.com/Astromations/Hazy/main/install.ps1 | iex
-```
-
-macOS and Linux -> **Bash**:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/Astromations/Hazy/main/install.sh | sh
-```    
-    
 ### 📃 Manual Installation 📃
 
 ---
 
-Download the the repo and put `user.css`, `theme.js` and `color.ini` into a new folder named `Hazy`, and place this folder into your `Themes` folder in `.spicetify`.
+Download the the repo and put `user.css`, `theme.js` and `color.ini` into a new folder named `CrazyHazy`, and place this folder into your `Themes` folder in `.spicetify`.
 Then run these commands to apply:
     
 ```powershell
-spicetify config current_theme Hazy
+spicetify config current_theme CrazyHazy
 spicetify config inject_css 1 replace_colors 1 overwrite_assets 1
 spicetify apply
 ```
