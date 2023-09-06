@@ -1,6 +1,6 @@
 :root {
   --backdrop: rgba(0,0,0,0.3);
-  --button-border: 8px
+  --button-border: 8px;
 }
 
 svg {
@@ -1695,11 +1695,18 @@ li.main-yourLibraryX-navItem.InvalidDropTarget {
 
 .playlist-playlist-playlist {
   margin-top: -64px;
-  margin-bottom: 100px;
 }
 
-.main-yourLibraryX-entryPoints, .playlist-playlist-playlistContent {
+.main-yourLibraryX-entryPoints {
   border: 1px solid rgba(206, 206, 206, 0.5);
+  border-radius: 8px;
+
+  background: radial-gradient(55% 100% at top left, rgba(255, 255, 255, 0.2), transparent);
+  background-size: 120% 110%;
+  background-repeat: no-repeat;
+}
+
+.playlist-playlist-playlistContent {
   border-radius: 8px;
 
   background: radial-gradient(55% 100% at top left, rgba(255, 255, 255, 0.2), transparent);
@@ -1821,3 +1828,24 @@ background-repeat: no-repeat;
   margin-bottom: 64px;
 }
 */
+
+.main-home-content {
+  margin-bottom: 4em;
+}
+
+.x-settings-container {
+  margin-bottom: 5em;
+}
+
+.artist-artistOverview-overview {
+  margin-bottom: 4em;
+}
+
+.main-rootlist-wrapper {
+  margin-bottom: 4em;
+}
+
+.main-actionBar-ActionBar {
+  border-top: 1px solid rgba(206, 206, 206, 0.5);
+  border-radius: 8px;
+}
