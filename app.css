@@ -92,11 +92,11 @@ html:not(.spotify__container--is-desktop.fullscreen) body.windows:not(.video-ful
 
 /* ----NOW PLAYING BAR---- */
 
+/*
 .Root__now-playing-bar {
   background-color: var(--backdrop) !important;
-
-  /* border-radius: 8px; */
 }
+*/
 
 .main-nowPlayingBar-nowPlayingBar {
   height: 90px !important;
